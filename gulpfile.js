@@ -1,17 +1,14 @@
-// gulpプラグインの読み込み
-const gulp = require("gulp");
-// Sassをコンパイルするプラグインの読み込み
-const sass = require("gulp-sass")(require("sass"));
+var gulp = require('gulp');
+var sass = require('gulp-sass');
 
-// style.scssをタスクを作成する
-gulp.task("default", () => {
-  // style.scssファイルを取得
-  return (
-    gulp
-      .src("css/style.scss")
-      // Sassのコンパイルを実行
-      .pipe(sass())
-      // cssフォルダー以下に保存
-      .pipe(gulp.dest("css"))
-  );
+
+gulp.task('sass', function() {
+  return gulp.src('./sass/**/*.scss')
+    .pipe(sass({outputStyle: 'expanded'}))
+    .pipe(gulp.dest('./css'));
 });
+
+gulp.task('sass:watch', function() {
+  gulp.watch('./sass/**/*.scss', gulp.task('sass'));
+});
+
