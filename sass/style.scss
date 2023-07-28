@@ -1,14 +1,32 @@
 /*--------------------------------
-基本設定
+基本設定・レイアウト
 ---------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500&family=Inconsolata:wght@300;600&display=swap');
+
+$brown: #92817A;
+$green: #85A389;
+$lightBrown: #A4907C;
+$black: #333;
 
 body {
     font-size: 0.8rem;
     line-height: 1.8;
     letter-spacing: .8px;
-    color: #333;
+    color: $black;
     box-sizing: border-box;
+
+    @media screen and (max-width: 768px) {
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    html {
+        overflow-x: hidden;
+    }
+
 }
 
 a {
@@ -31,37 +49,25 @@ li {
 
 .pc-only {
     display: block;
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 }
 
 .sp-only {
     display: none;
+
+    @media screen and (max-width: 768px) {
+        display: inline-block;
+    }
 }
 
-@media screen and (max-width: 768px) {
-
-    html,
-    body {
-        overflow-x: hidden;
-    }
-
-    body {
-        font-size: 0.8rem;
-        line-height: 1.7;
-    }
-
-    .pc-only {
-        display: none;
-    }
-
-    .sp-only {
-        display: block;
-    }
-
+.wrapper{
+    max-width: 1200px;
+    margin:0 auto;
 }
 
-/*--------------------------------
-レイアウト
----------------------------------*/
 
 .__site__wrapper {
     max-width: 1200px;
@@ -70,22 +76,21 @@ li {
 
 .__site__section {
     padding: 100px 0;
-}
 
-.__site__inner {
-    padding: 0 20px;
-}
-
-@media screen and (max-width: 768px) {
-    .mugitaro__site__section {
+    @media screen and (max-width: 768px) {
         padding: 60px 0;
     }
-
-    .mugitaro__site__inner {
-        padding: 0 10px;
-    }
-
 }
+
+
+.__site__inner {
+    padding: 0 40px;
+
+    @media screen and (max-width: 768px) {
+        padding:0 20px ;
+    }
+}
+
 
 /*--------------------------------
 ヘッダー・グローバルナビ
@@ -95,12 +100,12 @@ header {
     top: 0;
     z-index: 5;
     width: 100%;
-    height: 56px;
-    background-color: #fff;
+    height: 100px;
+    background: $brown;
 }
 
 .gnav__inner {
-    width: 70%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
