@@ -1,8 +1,7 @@
 {
-  "name": "02_sassbook",
+  "name": "mugitaro",
   "version": "2.0.2",
-  "description": "Web制作者のためのSassの教科書改訂2版 2章サンプル",
-  "homepage": "http://book2.scss.jp/",
+  "description": "むぎ太郎の環境設定",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
