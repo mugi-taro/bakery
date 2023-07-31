@@ -63,25 +63,23 @@ li {
   margin: 0 auto;
 }
 
-.__site__wrapper {
+.bakery__site__wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
-
-.__site__section {
+.bakery__site__section {
   padding: 100px 0;
 }
 @media screen and (max-width: 768px) {
-  .__site__section {
+  .bakery__site__section {
     padding: 60px 0;
   }
 }
-
-.__site__inner {
+.bakery__site__inner {
   padding: 0 40px;
 }
 @media screen and (max-width: 768px) {
-  .__site__inner {
+  .bakery__site__inner {
     padding: 0 20px;
   }
 }
@@ -102,12 +100,15 @@ header {
   max-width: 1200px;
   margin: 0 auto;
 }
-
+@media screen and (max-width: 820px) {
+  .gnav__inner {
+    width: 90%;
+  }
+}
 .gnav__list {
   float: right;
   line-height: 56px;
 }
-
 .gnav__list-item {
   position: relative;
   float: left;
@@ -115,27 +116,38 @@ header {
   height: 60px;
   transition: all 0.3s;
 }
-
+@media screen and (max-width: 768px) {
+  .gnav__list-item {
+    margin: 0 10px;
+  }
+}
+.gnav__list-item:hover.gnav__child__list {
+  display: block;
+}
 .gnav__list-item:last-child {
   margin-right: 0;
 }
-
 .gnav__list-item a {
   position: relative;
   display: block;
   padding: 0 8px;
   font-size: 1rem;
   letter-spacing: 0.05em;
-  color: #000;
+  color: #333;
   transition: 0.3s;
 }
-
-.gnav__list-item a:hover {
+@media screen and (max-width: 768px) {
+  .gnav__list-item a {
+    font-size: 0.6em;
+  }
+}
+.gnav__list-item .gnav__list-item a:after {
+  display: none;
+}
+.gnav__list:hover {
   background: #FA7070;
   color: #fff;
 }
-
-/* ドロップダウン */
 .gnav__child__list {
   display: none;
   width: 100%;
@@ -146,29 +158,6 @@ header {
   box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
 }
 
-.gnav__list-item:hover .gnav__child__list {
-  display: block;
-}
-
-@media screen and (max-width: 820px) {
-  .gnav__inner {
-    width: 90%;
-  }
-}
-@media screen and (max-width: 768px) {
-  .gnav__inner {
-    width: 90%;
-  }
-  .gnav__list-item {
-    margin: 0 10px;
-  }
-  .gnav__list-item a {
-    font-size: 0.6em;
-  }
-  .gnav__list-item a:after {
-    display: none;
-  }
-}
 /*--------------------------------
 ハンバーガーメニュー
 ---------------------------------*/
